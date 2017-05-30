@@ -1,0 +1,29 @@
+sudo: required
+language: java
+install: true
+script: bash travis-build.bash
+jdk:
+- oraclejdk8
+env:
+  global:
+  - secure: gZtQyCdWEuVC3t7TswAG5P0ioN/IDrbh8Uo1NXsC2F66tnS1UTLFZEyyOOJksTRZqrKcCMhpk/TKrFmGwsZ3LaLrB+M3Rn+XvKp3Q4o1RCFdN2ORlgO1u1LSIB1uqEnpIwxffYaMeelUdcduurvQN2NituNW50ZKhs2d3cmzx6/bFx4Kdx5jvwxIVMS9aLfiG+iPP9S599ZU6+nrd4SynHtZXbjY97Ni2Ynv3gxhCeYdQB1pVhrSHHVztfsLGefIAQ+pz9PfmFH915JBeuVQbaizNPDxEF87w1b1KlwKcd0Fh03JboyuHVhSUYz6DXEm9YTR/2SctqcoTMaAqxKaT5VdDIbE4CLBGpM3GHZeCYX8iUVF1fdX/AAsZ0iVc5P1/e8Tleuyd08fbYQrozAYUOXJQwaAuhAt7qwrrZLZ2fbMBs4byoVkaVU1EasNeOVwmk+mlTk30bi7sJoNuVnhumO+Tf7/M/Z+Wc2a57tFsqzuF+2WN82VO9qg5OluuMmwEhbCOqVLarFS6S7b4K5JdqEHZD/FV2Eo9HTj3vfhx9zxOKMo49Ne+Rpvb4FtPC8HyvBGZa6SxCARtrMJMfmTN+rX1nXscjDEvcz7ZrFuTJ2Gf8Umu1q/RrtwYsJp9iVsAr9pJcTZ65s7weQeJfsUT32c0hkHO8y1FMxxXDDtwqA=
+  - secure: FiuEh9ijgQTGJVmIbv0SdhqIJ1e5Z3HRfN4UOng9WqEVkJYgq58stNEXT/SyIo7hE5hcQECkvOj97gn7JWD7eI8jvZWUtLuchWD8ds7Jg5EfNvtwWSubwW62siAa4uqn7zFJcxOJG3xqyPg6GVWjXhCRkcyfmUR43zA3Ci+YU1AtrUHkgX7bcVduqqLA2NR3o7Z0c5c9cT8/yiTn0GXVrjOLtm4vlnTht5l51DSkqIilEzchznt5V+2Ua0DPG2UJhDP+C6UGapOWYH+ee9KLTAQJWyD/q9gGhYZrSY+fHsvQnI/fDJNa77XVEXTgPfDBkdzH9ciboZu3YYH7Pv3aLkuOhtz76+7C9d1q8NHhVTZqZjsPDsVnTc35LfsXG7Yj8PE2Zflg2vxmqFArIsf1p6ZDk/H7E80AzP5PPK1POLvH/DAgB3cFFV/NJs2Q4NJ2FSgV9b+k6Jj/fpmohIcYtRmC2IyN9Qu6OjChIn3ahXLx5l9s6T1DxrPIhpXyszxVOR6ffagIGc/taqmcMyI/j0iEYNetQCtAeuswVmZjKLiE2ER7o7MlgoxDrp3la3sMBs7DD+fDMsBJGwiG9GGvEtrlsfJ6aufeZZrEIQxoVa2LqTz5e2RvBKVxlyKFLWLUG2DQZK+laeWQ+e8QVRq90TlWZJs4HuiexbBQfeBSxfA=
+  - secure: pMBoplbcl6Lhtl570UReoVxLP07XMpiWYFISnWDWW7wmgFJWf9iMVm6kzX/SioPzhZFDpFPyGJB8qJgTx5Q7e572Ti7UPXyMLaKCVrDqPHi6r/ikZYvpEyi0o/Mqe8nIMcjkI8U1b0qlafLoZUGuh4WzvWnkqocg0hSPL5oUqyqRvVF9mn/rLWMZe68l1VJWW5xL3NW6JckjSd3eHPfV1uEnwdH6R6cPDf5CSFh3Jjn8uscQJphKkA+yvvw6Azw4E7E5L7Uc8IRfL6NYVhMY4/5ZVnGLtZ6PLGw+ibfieAMIA3s1jgLmc0KIDBP7/rS39gUorrUTDDJB8VFak7YRbQCGj0ZjVibCqFh8tlaVMD1rlxX3z3jqpvAsjSr4Dhp/g4tVoxrZzwDDwJYWFm7rsb6yp9tfpZlPAwg2V3A6xkbsm2EZ7JxEw+jp9mWH5QJBRMEsIuilKHW57wmIwaLp5UcrLgUeNZKli2B1fTRukQVW8QqNj9k4vz8/UgMNnzvZwSFY1VhVeMRtSKZATP+UfFMuhBq5td3q1v2bTLUmC65zowt0NEi+D0QH/2H8GTqQe9dxOGOHoJQbZ2fAy1XGayU4X1WRJPlUK4OL5rkWG76dGDpUU16jmYut3cGOuSduBcTokh/0SjugKE2Q09iHr9UOcQY8X8cBbkM6fH2Wi9Y=
+notifications:
+  email: false
+  webhooks:
+    on_success: always
+    on_failure: always
+    on_start: always
+    on_error: always
+    on_cancel: always
+    urls:
+    - https://webhook.atomist.com/travis
+services:
+- docker
+cache:
+  directories:
+  - $HOME/.m2
+branches:
+  except:
+  - /^v?\d+\.\d+\.\d+/
