@@ -1,4 +1,4 @@
-sudo: required
+#sudo: required
 language: java
 install: true
 script: bash travis-build.bash
@@ -19,8 +19,8 @@ notifications:
     on_cancel: always
     urls:
     - https://webhook.atomist.com/travis
-services:
-- docker
+#services:
+#- docker
 cache:
   directories:
   - $HOME/.m2
