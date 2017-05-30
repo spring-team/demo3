@@ -1,0 +1,19 @@
+---
+kind: "operation"
+client: "com.atomist:rug"
+version: "1.0.0-20170518094744"
+generator:
+  name: "SpringBootSeed"
+  group: "atomist"
+  artifact: "spring-team-handlers"
+  version: "0.1.125"
+  parameters:
+    - "org": "spring-team"
+    - "repo": "spring-rest-seed"
+    - "branch": "master"
+    - "artifactId": "demo3"
+    - "groupId": "com.atomist"
+    - "version": "0.1.0"
+    - "rootPackage": "com.atomist"
+    - "serviceClassName": "Test"
+
