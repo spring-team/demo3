@@ -32,3 +32,15 @@ editor:
     - "encryptedArtifactoryUser": "F**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************="
     - "encryptedArtifactoryToken": "g**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************="
 
+---
+kind: "operation"
+client: "com.atomist:rug"
+version: "1.0.0-20170518094744"
+editor:
+  name: "Cascade"
+  group: "atomist"
+  artifact: "spring-team-handlers"
+  version: "0.1.125"
+  parameters:
+    - "script": "{"description":"Cascade following push to seed project spring-rest-seed","steps":[{"primitive":"AddFile","description":"Add file src/main/resources/logback.xml","payload":{"path":"src/main/resources/logback.xml","content":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<configuration>\n\n    <!-- Send debug messages to System.out -->\n    <appender name=\"STDOUT\" class=\"ch.qos.logback.core.ConsoleAppender\">\n        <!-- By default, encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->\n        <encoder>\n            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>\n        </encoder>\n    </appender>\n\n    <logger name=\"org.springframework\" level=\"INFO\" additivity=\"false\">\n        <appender-ref ref=\"STDOUT\" />\n    </logger>\n\n    <logger name=\"com.atomist.springrest\" level=\"DEBUG\" additivity=\"false\">\n        <appender-ref ref=\"STDOUT\" />\n    </logger>\n\n    <!-- By default, the level of the root level is set to DEBUG -->\n    <root level=\"WARN\">\n        <appender-ref ref=\"STDOUT\" />\n    </root>\n</configuration>\n"}}]}"
+
