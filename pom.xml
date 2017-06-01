@@ -60,7 +60,7 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>build-info</goal>
+							<goal>build-info1</goal>
 						</goals>
 					</execution>
 				</executions>
