@@ -10,4 +10,9 @@ public class HomeController {
     public String home() {
         return "Hello REST Microservice World";
     }
+    
+    @RequestMapping(path = "/hello")
+    public String hello() {
+        return "Hello REST Microservice World";
+    }
 }
